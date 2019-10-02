@@ -1,0 +1,111 @@
+{% extends 'baseapp.html' %}
+
+
+{% block content %}
+
+
+       <div id="cusbac1" >
+
+        <div class="container containbac">
+
+                    <div class="lowborder" style="margin:5px;padding:5px">
+
+                        <div style="float:left;">
+                            <h4>{{ name }}</h4>
+                        </div>
+
+                        <div style="float:right;margin-right:10px">
+                            <a href="{% url 'login' %}" class="btn btn-info" role="button">Logout</a>
+                        </div>
+
+                        <div style="clear: both;"></div>
+
+
+                    </div>
+
+
+               
+
+
+       <h2>All My Questions</h2>
+
+
+
+    {% if allitem %}
+	
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>
+                        Question Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+
+                    
+                    <th>
+                        Date Set
+                    </th>
+                 
+                    <th></th>
+                </tr>
+
+                {% for item in allitem %}
+				
+                    <tr>
+                        <td>
+                            {{ item.tasktitle }}
+
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-info" role="button">Click to View</a>
+                        </td>
+
+                        <td>
+                           {{ item.date }}
+                        </td>
+						
+
+                    </tr>
+					
+                 {% endfor %}              
+
+            </table>
+            </div>
+			
+         {% elif error %}
+
+          <div> No  Assignments Available.</div>
+         
+         {% endif %}
+
+            <hr />
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<script>
+
+ function showme(){
+ 
+  alert("hello world");
+ 
+ }
+ 
+
+ </script>
+
+
+
+{% endblock %}
+
+
+

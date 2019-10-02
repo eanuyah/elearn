@@ -1,0 +1,139 @@
+{% extends 'baseapp.html' %}
+
+
+{% block content %}
+
+
+<style>
+
+  .usetime {
+    margin-right:30px;
+    
+    font-weight: bold;
+    font-size:18px;
+    width:20%;
+    float: left;
+  }
+
+
+ .usetime1 {
+
+        clear: both;
+        
+    }
+
+</style>
+
+ <div id="cusbac1">
+
+        <div class="container containbac">
+
+                    <div class="lowborder" style="margin:5px;padding:5px">
+
+                        <div style="float:left;">
+                            <h4>{{ name }}</h4>
+                        </div>
+
+                        <div style="float:right;margin-right:10px">
+                            <a href="{% url 'login' %}" class="btn btn-info" role="button">Logout</a>
+                        </div>
+
+                        <div style="clear: both;"></div>
+
+
+                    </div>
+   
+
+<h2>Add Assignment</h2>
+
+<p>
+    
+    <a href="{% url 'staffpage' %}" class="btn btn-primary" role="button">View all Assignment</a>
+
+</p>
+
+<form id="form1" name="form1" method="post" action="">
+
+   {% csrf_token %}
+
+    <div class="form-horizontal">
+        <hr />
+      
+        <div class="form-group">
+			<div class="col-sm-2" style="text-align:center;;font-weight:bold">
+                  Title
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="dfile" name="tasktitle" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-sm-2" style="text-align:center;;font-weight:bold">
+                  Question Desription
+            </div> 
+			<div class="col-md-6">
+
+                <textarea class="form-control" rows="3" name="description" placeholder="Assigment Description" required></textarea>
+               
+            </div>
+        </div>
+
+       
+
+
+
+        <div class="form-group">
+            <div class="col-sm-2" style="text-align:center;;font-weight:bold">
+                 Class Name
+            </div> 
+            <div class="col-md-4">
+                <select class="form-control" id="usertype" name="classname">
+                    <option>Select Class</option>
+
+                        <option value="JSS 1A" >JSS1A</option>
+					   
+						<option value="JSS 2A" >JSS2A</option>
+						
+						<option value="JSS 3A" >JSS3A</option>
+                </select>
+
+            </div>
+        </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                  <hr/>  <input type="submit" value="Add Question" class="btn btn-default" style="background-color:red; color:white" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+ </div>
+ 
+</div>
+
+
+
+
+
+<script>
+
+ function showme(){
+ 
+  alert("hello world");
+ 
+ }
+ 
+
+ </script>
+
+
+
+{% endblock %}
+
+
+
